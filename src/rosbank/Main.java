@@ -1,32 +1,39 @@
 package rosbank;
+import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
 
     public static void bubbleSort(int[] array) {
-        boolean sorted = false;
-        int temp;
-        while(!sorted) {
-            sorted = true;
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i] > array[i+1]) {
-                    temp = array[i];
+        boolean isSorted = false;
+        int buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < array.length-1; i++) {
+                if(array[i] > array[i+1]){
+                    isSorted = false;
+
+                    buf = array[i];
                     array[i] = array[i+1];
-                    array[i+1] = temp;
-                    sorted = false;
+                    array[i+1] = buf;
                 }
             }
         }
 
+        Random rand = new Random();
+        int randArray = rand.nextInt(array.length-1);
+        buf = array[randArray];
+        array[randArray] = array[randArray+1];
+        array[randArray+1] = buf;
 
+        System.out.println(Arrays.toString(array));
     }
 
     public static void main(String[] args) {
-        int a[] = new int [482310];
+
+        int a[] = new int[] {4,8,2,3,1,0};
 
         new Main().bubbleSort(a);
 
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
-        }
     }
 }
