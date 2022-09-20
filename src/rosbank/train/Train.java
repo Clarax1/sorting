@@ -13,7 +13,6 @@ public class Train {
     }
 
     private void initWagons() {
-
     }
 
     public int getWeight() {
@@ -25,6 +24,9 @@ public class Train {
     }
 
     public void refresh(){
-        //поменять вес
+        for (var i = 0; i < wagons.size(); i ++){
+            var t = wagons.get(i);
+            t.apply();
+        }
     }
 }

@@ -16,7 +16,7 @@ public enum BridgeType {
         this.weightMax = weightMax;
     }
 
-    public Bridge generate(){
+    public Bridge generateBridge(){
         return new Bridge(material,ThreadLocalRandom.current().nextInt(weightLow,weightMax));
     }
 }
