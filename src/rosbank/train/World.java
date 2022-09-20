@@ -13,8 +13,10 @@ public class World {
     }
 
     private void initPlaces() {
+
     }
 
     private void initTrain() {
+
     }
 }
